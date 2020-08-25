@@ -165,7 +165,7 @@ async def on_shutdown(app):
     await asyncio.gather(*coros)
 
 def checkDeviceReadiness():
-    if not os.path.exists('/dev/video0') and platform.system() == 'Linux':
+    if not os.path.exists('/dev/video10') and platform.system() == 'Linux':
         print('Video device is not ready')
         print('Trying to load bcm2835-v4l2 driver...')
         os.system('bash -c "modprobe bcm2835-v4l2"')
